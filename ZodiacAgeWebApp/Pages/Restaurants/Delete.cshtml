@@ -1,0 +1,46 @@
+﻿@page "{restaurantId}"
+@model ZodiacAgeWebApp.Pages.Restaurants.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+    <h2>Delete</h2>
+    <div class="alert alert-danger">
+       Are you sure, You want to delete @Model.Restaurant.Name ?
+    </div>
+    <form method="post">
+
+        <input type="hidden" asp-for="Restaurant.Id" />
+
+        <div class="form-group row">
+            <label asp-for="Restaurant.Name" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Restaurant.Name" readonly class="form-control-plaintext" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Restaurant.Location" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Restaurant.Location" readonly class="form-control-plaintext" />
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label asp-for="Restaurant.Cuisine" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Restaurant.Cuisine" readonly class="form-control-plaintext" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a asp-page="List" class="btn btn-primary">Cancel</a>
+            </div>
+
+        </div>
+    </form>
+
+    <br />
+    <a asp-page="./List" class="btn btn-primary">See All Restaurants</a>
